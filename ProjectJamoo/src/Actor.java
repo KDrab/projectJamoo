@@ -17,7 +17,7 @@
 */
 
 public class Actor extends Widget {
-	//A CHANGE
+	
 	//The speed of the actor
 	int speed;
 	
