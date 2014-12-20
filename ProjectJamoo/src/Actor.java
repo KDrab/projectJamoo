@@ -23,15 +23,10 @@ public class Actor extends Widget {
 	//The speed of the actor
 	int speed;
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-	
 	/**
 	 * <P> move the actor for the turn
 	 *
-	 * @param None
+	 * @param The location to move to
 	 * @return Nothing
 	 */
 	public void move() {

@@ -28,12 +28,6 @@ public class Game {
 	//The current state of the mouse, whether nothing is selected, a character is selected, an item is selected, etc.
 	int mouseState;
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	} //close main method
-	
-	
 	/**
 	 * <P> Setup the game to start
 	 *
@@ -42,6 +36,8 @@ public class Game {
 	 */
 	public void setup() {
 		//TODO
+		Room startRoom = new Room();
+		startRoom.generateRoom("start");
 		
 	} //close setup method
 	

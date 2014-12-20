@@ -39,19 +39,9 @@ public class Room {
 	boolean explored; //Has the room been fully explored? (i.e. fog of war)
 	boolean safe; //Has the room been cleared of enemies/dangers?
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-	
 	/**
 	  * Constructor.
 	  * 
-	  * @param aName (required) brand name of the guitar. Must have content. Length 
-	  * must be in range <tt>1..50</tt>. 
-	  * @param aPrice (optional) purchase price of the guitar.
-	  * @param aNumStrings (required) number of strings on the guitar. Can take 
-	  * values 6 or 12.
 	  */
 	public Room() {
 		
@@ -61,10 +51,10 @@ public class Room {
 	/**
 	 * <P> Generate the interior of the room
 	 *
-	 * @param None
+	 * @param roomType
 	 * @return Nothing
 	 */
-	public void generateRoom() {
+	public void generateRoom(String roomType) {
 		
 		if (columns == -1) {
 			//generateColumns();

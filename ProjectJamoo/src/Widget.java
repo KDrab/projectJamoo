@@ -26,10 +26,5 @@ public abstract class Widget {
 	int x; //the x location of the widget within the room
 	int y; //the y location of the widget within the room
 	String description; //the description of the widget
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
 
 }

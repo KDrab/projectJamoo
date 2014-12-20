@@ -33,12 +33,6 @@ public class Tile {
 	Widget widgetContainedInTile;
 	
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-	
-	
 	/**
 	 * <P> Get the widget that is within the tile
 	 *

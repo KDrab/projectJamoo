@@ -1,8 +1,9 @@
-
 /**
-* Item Object.
+* Actors Object.
+*
+* <p> teeeeest
 * 
-* <P>Represents an item in the game
+* <P>An "actor", or character, within the game
 * <P>Extends Widget abstract class
 *  
 * <P>Bugs:
@@ -16,8 +17,6 @@
 * @version 0.1
 * @date 11/9/2014
 */
-
-public class Item extends Widget {
-
+public class Location {
 
 }

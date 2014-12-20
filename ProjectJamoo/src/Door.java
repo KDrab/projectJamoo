@@ -22,12 +22,7 @@ public class Door {
 	Room[] conectedRooms;
 	//Whether the door is locked
 	Boolean locked;
-	
-	static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-	
+		
 	
 	/**
 	 * <P> Unlock the door
