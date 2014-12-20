@@ -10,12 +10,14 @@ import java.util.List;
 * 
 * <P>TODO:
 * 
-* <P>Recent Changes:
+* <P>Recent Changes: removed unnecessary main
+* 					 expanded on generateRoom() by adding roomType parameter
+* 					 added generateRoomSize()
 *  
 * @author Richard Holgate
 * @lastEditor Richard Holgate
 * @version 0.1
-* @date 11/9/2014
+* @date 12/19/2014
 */
 
 public class Room {
@@ -51,14 +53,13 @@ public class Room {
 	/**
 	 * <P> Generate the interior of the room
 	 *
-	 * @param roomType
+	 * @param roomType - the type of room being generated
 	 * @return Nothing
 	 */
 	public void generateRoom(String roomType) {
 		
 		if (columns == -1) {
-			//generateColumns();
-			//generateRows();
+			generateRoomSize(roomType);
 			//TODO
 		} //close if statement
 		
@@ -89,6 +90,27 @@ public class Room {
 		//TODO
 		
 	} //close generateRoom method
+	
+	
+	/**
+	 * <P> Generate the columns and rows for the room
+	 *
+	 * @param roomType - the type of room being generated
+	 * @return Nothing
+	 */
+	private void generateRoomSize(String roomType) {
+		
+		if (roomType.equals("start")) {
+			columns = 15;
+			rows = 15;
+			
+		} //close if statement
+		else {
+			columns = (int) (Math.random()*25) + 5;
+			rows    = (int) (Math.random()*25) + 5;
+		} //close else statement
+		
+	} //close generateColumns method
 	
 	
 	/**
