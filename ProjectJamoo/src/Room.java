@@ -13,6 +13,9 @@ import java.util.List;
 * <P>Recent Changes: removed unnecessary main
 * 					 expanded on generateRoom() by adding roomType parameter
 * 					 added generateRoomSize()
+* 					 added generateTiles()
+* 					 added generateAccessibleRooms()
+* 					 set fields to null in constructor
 *  
 * @author Richard Holgate
 * @lastEditor Richard Holgate
@@ -32,7 +35,7 @@ public class Room {
 	List<Tile> tileArray;
 	List<Actor> actorArray;
 	List<Item> itemArray;
-	List<Room> accesibleRooms; //All rooms connecting to this room
+	List<Room> accessibleRooms; //All rooms connecting to this room
 	List<Door> connectingDoors; //All doors connecting to this room
 	
 	//various traits about the visibility of the room
@@ -47,6 +50,16 @@ public class Room {
 	  */
 	public Room() {
 		
+		tileArray = null;
+		actorArray = null;
+		itemArray = null;
+		accessibleRooms = null;
+		connectingDoors = null;
+		
+		visible = false;
+		accesible = false;
+		explored = false;
+		safe = false;
 		
 	}
 	
@@ -54,17 +67,15 @@ public class Room {
 	 * <P> Generate the interior of the room
 	 *
 	 * @param roomType - the type of room being generated
-	 * @return Nothing
 	 */
 	public void generateRoom(String roomType) {
 		
 		if (columns == -1) {
 			generateRoomSize(roomType);
-			//TODO
 		} //close if statement
 		
 		if (tileArray == null) {
-			//generateTiles();
+			generateTiles(roomType);
 			//TODO
 		} //close if statement
 		
@@ -78,8 +89,8 @@ public class Room {
 			//TODO
 		} //close if statement
 		
-		if (accesibleRooms == null) {
-			//generateAccesibleRooms();
+		if (accessibleRooms == null) {
+			generateAccesibleRooms();
 			//TODO
 		} //close if statement
 		
@@ -88,6 +99,7 @@ public class Room {
 			//TODO
 		} //close if statement
 		//TODO
+		
 		
 	} //close generateRoom method
 	
@@ -104,13 +116,84 @@ public class Room {
 			columns = 15;
 			rows = 15;
 			
+			//it's the starting room, so set fields to true
+			visible = true;
+			accesible = true;
+			explored = true;
+			safe = true;
+			
 		} //close if statement
 		else {
+			//generate a random number of rows and columns between 5 and 30
 			columns = (int) (Math.random()*25) + 5;
 			rows    = (int) (Math.random()*25) + 5;
 		} //close else statement
 		
 	} //close generateColumns method
+	
+	
+	/**
+	 * <P> Generate the columns and rows for the room
+	 *
+	 * @param roomType - the type of room being generated
+	 * @return Nothing
+	 */
+	private void generateTiles(String roomType) {
+		
+		for (int i = 0; i < rows; i++) {
+			
+			for (int j = 0; j < columns; j++) {
+				
+				//create each tile by iterating through the rows and columns
+				Tile tile = new Tile();
+				tile.x = j;
+				tile.y = i;
+				
+			} //close for loop			
+			
+		} //close for loop
+	} //close generateTiles method
+	
+	
+	/**
+	 * <P> Generate the adjoining rooms
+	 *
+	 * @param None
+	 * @return Nothing
+	 */
+	private void generateAccesibleRooms() {
+		
+		//generate between 1 and 4 new rooms
+		int roomsToGenerate = (int) Math.random()*4;
+		
+		for (int i = 0; i < roomsToGenerate; i++) {
+			
+			Room room = new Room();
+			accessibleRooms.add(room);
+			
+		} //close for loop
+		
+	} //close generateAccesibleRooms method
+	
+	
+	/**
+	 * <P> Generate the adjoining rooms
+	 *
+	 * @param None
+	 * @return Nothing
+	 */
+	private void generateDoors() {
+		
+		//for each room in the accessible rooms list generate a door
+		for (int i = 0; i < accessibleRooms.size(); i++) {
+			
+			Door door = new Door();
+			door.;
+			
+			
+		} //close for loop
+		
+	} //close generateDoors method
 	
 	
 	/**

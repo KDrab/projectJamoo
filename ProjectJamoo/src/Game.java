@@ -11,6 +11,7 @@ import java.util.List;
 * <P>TODO:
 * 
 * <P>Recent Changes: removed unnecessary main()
+* 					 create first room in setup() method
 *  
 * @author Richard Holgate
 * @lastEditor Richard Holgate
@@ -35,8 +36,9 @@ public class Game {
 	 * @return Nothing
 	 */
 	public void setup() {
-		//TODO
+		//generate the starting room and add it to the board
 		Room startRoom = new Room();
+		board.add(startRoom);
 		startRoom.generateRoom("start");
 		
 	} //close setup method

@@ -10,6 +10,7 @@
 * <P>TODO:
 * 
 * <P>Recent Changes: removed unnecessary main()
+* 					 add constructor setting most initial fields to null
 *  
 * @author Richard Holgate
 * @lastEditor Richard Holgate
@@ -26,11 +27,26 @@ public class Tile {
 	String name;
 	String description;
 	//traits about the accessibility of the tile
-	boolean accesible; //is the tile aceesible? (i.e. can widgets be on the ground in the tile?)
+	boolean accesible; //is the tile accesible? (i.e. can widgets be on the ground in the tile?)
 	boolean filled; // is the tile completely filled? (i.e. can widgets move through the air in the tile?)
 	//is there something located within the tile?
 	boolean containsWidget;
 	Widget widgetContainedInTile;
+	
+	/**
+	  * Constructor.
+	  * 
+	  */
+	public Tile() {
+		name = null;
+		description = null;
+		
+		accesible = true;
+		boolean filled = false;
+		
+		containsWidget = false;
+		widgetContainedInTile = null;
+	}
 	
 	
 	/**
@@ -43,6 +59,6 @@ public class Tile {
 		return null;
 		//TODO
 		
-	} //close getContainedWidget method
+	} //close getContainedWidget method	
 
 }
