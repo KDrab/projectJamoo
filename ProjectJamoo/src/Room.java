@@ -187,8 +187,9 @@ public class Room {
 		//for each room in the accessible rooms list generate a door
 		for (int i = 0; i < accessibleRooms.size(); i++) {
 			
+			//generate a door and set the connected rooms to be this room, and the current room in the accessibleRooms array
 			Door door = new Door();
-			door.;
+			door.setConnectedRooms(this, accessibleRooms.get(i));
 			
 			
 		} //close for loop
