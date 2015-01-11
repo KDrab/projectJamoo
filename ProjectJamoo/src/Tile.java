@@ -31,6 +31,7 @@ public class Tile {
 	boolean filled; // is the tile completely filled? (i.e. can widgets move through the air in the tile?)
 	//is there something located within the tile?
 	boolean containsWidget;
+	boolean containingWidget;
 	Widget widgetContainedInTile;
 	
 	/**
