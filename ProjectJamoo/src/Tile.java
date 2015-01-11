@@ -11,11 +11,12 @@
 * 
 * <P>Recent Changes: removed unnecessary main()
 * 					 add constructor setting most initial fields to null
+* 					 added containingWidget boolean
 *  
 * @author Richard Holgate
-* @lastEditor Richard Holgate
+* @lastEditor Kenny Drabble
 * @version 0.1
-* @date 12/19/2014
+* @date 1/10/2015
 */
 
 public class Tile {
