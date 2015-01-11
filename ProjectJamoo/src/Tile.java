@@ -33,6 +33,7 @@ public class Tile {
 	//is there something located within the tile?
 	boolean containsWidget;
 	boolean containingWidget;
+	boolean wtF;
 	boolean WIDGET;
 	Widget widgetContainedInTile;
 	
